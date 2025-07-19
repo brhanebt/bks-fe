@@ -1,0 +1,18 @@
+@if(books.length>0){
+    <ul class="pill-group">
+        @for(book of books | sort; track book.id; let i=$index){
+            <li class="pill" (click)="selectedBook===undefined||selectedBook.id!=book?.id?selectedBook=book:selectedBook=undefined">{{i+1}}. {{book.booktitle|substring:50}}
+            </li>
+        }
+    </ul>
+    <h1>{{books.length}} Books</h1>
+} @else if(books.length>=10){
+    <span>Click <a>Load more</a> to see more books.</span>
+}@else{
+    <p>No books found!</p>
+}
+<app-book-detail 
+[book]="selectedBook"
+(added)="onAdded($event)"
+>
+</app-book-detail>

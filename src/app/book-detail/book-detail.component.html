@@ -1,0 +1,25 @@
+@if(book()){
+    <h3>Selected book</h3>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>ISBN</th>
+            <th>Book Title</th>
+            <th>Book Author</th>
+            <th>Year of Publication</th>
+            <th>Publisher</th>
+            <th>Image (m)</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>{{book()!.id}}</td>
+            <td>{{book()!.isbn}}</td>
+            <td>{{book()!.booktitle|substring:35}}</td>
+            <td>{{book()!.bookauthor}}</td>
+            <td>{{book()!.yearofpublication}}</td>
+            <td>{{book()!.publisher}}</td>
+            <td><img src="{{book()!.imageurlm}}" alt="N/A"/></td>
+            <td><button (click)="addToCart()">Add to cart</button></td>
+        </tr>
+    </table>
+}
