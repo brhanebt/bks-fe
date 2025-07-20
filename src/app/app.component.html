@@ -1,14 +1,18 @@
 
 
+<header></header>
 <main class="main">
     <div class="left-side">
       <h1>Hello, {{ user }}</h1>
+      <p>{{this.current_time()}}</p>
       <h3 [innerText]="subtitle"></h3>
       <!-- <p [attr.aria-label]="source"></p> -->
     </div>
 </main>
 
-<router-outlet />
 <div class="content">
   <app-book-list></app-book-list>
 </div>
+<footer appCopyright> {{setting.title}}--{{setting.version}}</footer>
+<router-outlet />
+

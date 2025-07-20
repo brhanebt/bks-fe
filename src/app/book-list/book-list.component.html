@@ -1,7 +1,7 @@
 @if(books.length>0){
     <ul class="pill-group">
-        @for(book of books | sort; track book.id; let i=$index){
-            <li class="pill" (click)="selectedBook===undefined||selectedBook.id!=book?.id?selectedBook=book:selectedBook=undefined">{{i+1}}. {{book.booktitle|substring:50}}
+        @for(book of books | sort; track book.isbn; let i=$index){
+            <li class="pill" (click)="selectedBook===undefined||selectedBook.isbn!=book?.isbn?selectedBook=book:selectedBook=undefined">{{i+1}}. {{book.booktitle|substring:50}}
             </li>
         }
     </ul>
@@ -16,3 +16,4 @@
 (added)="onAdded($event)"
 >
 </app-book-detail>
+<!-- <input appNumeric/> -->

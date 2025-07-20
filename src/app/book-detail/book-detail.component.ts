@@ -1,6 +1,6 @@
 import { Component,input, OnChanges, output, SimpleChanges } from '@angular/core';
-import { Book } from '../book';
-import { SubstringPipe } from '../substring.pipe';
+import { Book } from '../model/book';
+import { SubstringPipe } from '../pipes/substring.pipe';
 
 @Component({
   selector: 'app-book-detail',
